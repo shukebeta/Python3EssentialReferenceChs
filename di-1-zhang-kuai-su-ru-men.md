@@ -2,7 +2,7 @@
 
 本章是Python的快速入门，它不涉及 python的特殊规则和细节，目标是通过示例使你快速了解Python语言的特点。本章简要介绍 了变量表达式、控制流、函数以及输入/输出的基本概念，不会涉及Python语言的高级特性。尽管如此，有经验的程序员还是能够通过阅读本章的材料创建高级程序。我们鼓励新人动手运行示例，亲身体验一把 Python。
 
-### 1.1. 运行Python
+## 1.1. 运行Python
 
 Python 程序通过解释器执行。如果你的机器已经装好了python，简单的在命令行键 入python即可运行python解释器。在解释器运行的时，会有一个命令提示符 &gt;&gt;&gt;， 在提示符后键入你的程序语句，键入的语句将会立即执行。在下边的例子中，我们 在&gt;&gt;&gt;提示符后边键入最常见的显示"Hello World"的命令:
 
@@ -39,9 +39,9 @@ Python 源代码文件使用 `.py` 后缀。`'#'`表示本行后面的内容是�
 
 终端窗口会在程序执行完毕后立即关闭\(经常是在你看到它的输出之前\)。为避免这 个问题,你可以使用 python 集成开发环境，例如 IDLE 或 Pythonwin。另一个可行的方法是建立一个 bat文件，在文件写入这样一行语句，如 python -i helloworld.py。运行这个 批处理，程序在执行完成后会自动进入python解释器。
 
-在解释器中,也可以通过函数execfile\(\)来运行一个保存在磁盘上的程序,如下例: 
+在解释器中,也可以通过函数execfile\(\)来运行一个保存在磁盘上的程序,如下例:
 
-`>>> execfile("helloworld.py")  
+`>>> execfile("helloworld.py")    
 Hello World`
 
 在UNIX下，你可以在程序的首行写入 \#! 魔法字符串来自动调用python解释器执行你的脚本。
@@ -64,10 +64,10 @@ Hello World`
  >>> raise SystemExit
 ```
 
-### 1.2. 变量和表达式
+## 1.2. 变量和表达式
 
 通过 Listing 1.1 所示的程序示例变量和表达式的用法  
- Listing 1.1 复利计算器\(Simple Compound-Interest Calculation\)
+Listing 1.1 复利计算器\(Simple Compound-Interest Calculation\)
 
 ```python
 principal = 1000 # Initial amount (本金)
@@ -126,7 +126,7 @@ Listing 1.1中的程序美中不足的就是输出不是很好看，为了让它
 
 格式字符串包含普通文本及格式化字符序列，例如`"%d"`、 `"%s"`、 和 `"%f"`，这些序列决定特定类型的数据的输出格式。`'%3d'`将一个整数在宽度为3个字符的栏中右对齐，`'%0.2f'`将一个浮点数的小数点后部分转换为2位。格式字符串的作用和C语言中的`sprintf()`函数基本相同。详细内容请参阅[第4章 运算符及表达式。](di-4-zhang-yun-suan-fu-yu-biao-da-shi.md)
 
-### 1.3. 条件语句
+## 1.3. 条件语句
 
 `if` 和 `else` 语句用来做简单的逻辑测试，比如：
 
@@ -165,7 +165,6 @@ if not (b < a or b > c):
 
 用 `elif` 语句可以检验多重条件\(可代替其它语言中的`switch`语句\):
 
-
 ```python
 if a == '+':
     op = PLUS
@@ -177,7 +176,7 @@ else:
     raise RuntimeError, "Unknown operator"
 ```
 
-### 1.4. 文件输入/输出
+## 1.4. 文件输入/输出
 
 下面的程序打开一个文件，然后一行行地读出并显示文件内容:
 
@@ -207,7 +206,7 @@ f.close()
 f.write("%3d   %0.2f\n" % (year,principal))
 ```
 
-### 1.5. 字符串
+## 1.5. 字符串
 
 把一串字符用单引号，双引号或三引号引起来，你就得到一个字符串。如下例：
 
@@ -242,10 +241,10 @@ d = a[6:]    # d = "World"
 e = a[3:8]   # e = "lo Wo"
 ```
 
-可以用加 `+` 运算符来连结字符串：  
+可以用加 `+` 运算符来连结字符串：
 
-```python  
-g = a + " This is a test" 
+```python
+g = a + " This is a test"
 ```
 
 使用 `str()` 函数, `repr()` 函数或反引号 \` 可以将其他类型的数据转换为字符串:
@@ -255,9 +254,10 @@ s = "The value of x is " + str(x)
 s = "The value of y is " + repr(y)
 s = "The value of y is " + `y`
 ```
+
 `repr()` 函数用来取得对象的规范字符串表示，向后的引号 \` 是 `repr()` 函数的快捷写法。在大多情况下 `str()` 和 `repr()` 函数会返回同样的结果，但是它们之间其实有很微妙的差别，在后边的章节我们将详细说明二者之间的区别。
 
-### 1.6. 列表和元组\(Lists & Tuples\)
+## 1.6. 列表和元组\(Lists & Tuples\)
 
 字符串是字符的序列，列表和元组则是对象的序列。象下面这样就创建出一个列表：
 
@@ -284,13 +284,13 @@ print(len(names))   # prints 4
 names.append("Kate")
 ```
 
-`aList.insert(index, aMember)` 方法把新元素 `aMember` 插入到列表 `aList[index]` 对应的元素之前:  
- 
- ```python
- names.insert(2, "Sydney") 
- ```
- 
- 用切片运算符可以取出一个子列表，也可以对子列表重新赋值：
+`aList.insert(index, aMember)` 方法把新元素 `aMember` 插入到列表 `aList[index]` 对应的元素之前:
+
+```python
+ names.insert(2, "Sydney")
+```
+
+用切片运算符可以取出一个子列表，也可以对子列表重新赋值：
 
 ```python
 b = names[0:2]     # Returns [ "Jeff", "Mark" ]
@@ -302,10 +302,10 @@ names[0:2] = ['Dave', 'Mark', 'Jeff'] 用右边的 list 替换 names 列表中�
 加 `+` 运算符可以连结列表：
 
 ```python
-a = [1,2,3] + [4,5]  # Result is [1,2,3,4,5] 
+a = [1,2,3] + [4,5]  # Result is [1,2,3,4,5]
 ```
 
-列表元素可以是任意的 Python 对象,当然也包括列表:  
+列表元素可以是任意的 Python 对象,当然也包括列表:
 
 ```python
 a = [1, "Dave", 3.14, ["Mark", 7, 9, [100, 101]], 10]
@@ -316,7 +316,7 @@ a = [1, "Dave", 3.14, ["Mark", 7, 9, [100, 101]], 10]
 ```python
 a[1]            # Returns "Dave"     
 a[3][2]         # Returns 9          
-a[3][3][1]      # Returns 101        
+a[3][3][1]      # Returns 101
 ```
 
 Listing 1.2 中的代码从一个文件中读取一系列数字，然后输出其中的最大值和最小值。 借用这个示例我们可以了解到列表的一些高级特性:
@@ -339,8 +339,7 @@ print("The maximum value is ", max(fvalues))
 
 把上面的代码保存为 `list-1.2.py`，接下来我们详细解释这个程序。
 
-程序第一行用 `import` 语句从 `Python library` 中导入 `sys` 模块。
-程序第二行打开 `sys.argv[1]` 对应的文件。这一行要求你在命令行提供一个有效的文件给上面的程序。
+程序第一行用 `import` 语句从 `Python library` 中导入 `sys` 模块。 程序第二行打开 `sys.argv[1]` 对应的文件。这一行要求你在命令行提供一个有效的文件给上面的程序。
 
 假设你输入下面这样一个命令：
 
@@ -366,7 +365,6 @@ person = first_name, last_name, phone
 
 不过，为了使程序更清晰可读，还是建议大家不要依赖 `Python` 的这种智能。
 
-
 ```python
 a = (1,4,5,-9,10)
 b = (7,)           # 一个元素的元组，注意一定要加一个额外的逗号!
@@ -375,7 +373,7 @@ person = (first_name, last_name, phone)
 
 元组支持大多数列表运算，例如索引，切片和连结。与列表最关键的不同在于 `tuple` 是只读的，一经创建，就不可以再修改它的内容。你不能修改 `tuple` 中的元素，也不能给 `tuple` 添加或者删除元素。
 
-### 1.7. 循环
+## 1.7. 循环
 
 在前面的章节，我们在使用 `while` 语句时，已经简单介绍了 while 循环。在 `Python` 语言中还有另一种循环结构，这就是 `for` 循环，它通过迭代一个序列，例如字符串，列表，或者 `tuple` 等的每一个元素来建立循环。请看下边的例子：
 
@@ -390,7 +388,7 @@ for i in range(1,10):
 a = range(5)                   # a = [0,1,2,3,4]      
 b = range(1, 8)                # b = [1,2,3,4,5,6,7]  
 c = range(0, 14, 3)            # c = [0,3,6,9,12]     
-d = range(8, 1, -1)            # d = [8,7,6,5,4,3,2]  
+d = range(8, 1, -1)            # d = [8,7,6,5,4,3,2]
 ```
 
 `for` 语句可以迭代任何类型的序列：
@@ -407,10 +405,9 @@ for name in b:
     print name
 ```
 
-在 `Python2.x` 中 `range()` 函数根据起始值，终止值及步进值三个参数在内存中建立了一个列表。当需要一个很大的列表时，初始化这个列表既占内存又费时间。 为了克服它的缺点，`Python2.x` 提供了 `xrange()` 函数。`xrange()` 函数只有在需要值时才临时通过计算提供值，这大大节省了内存。你也许已经发现在 `Python3.x` 中并没有提供 `xrange` 函数。这不是退步，简单起见，你可以认为 `Python3.x` 中的 `range` 就是 `Python2.x` 中的 `xrange`。 其实`Python3.x`中的`range`比`Python2.x`中的`xrange`还要强大的多。如果你想了解更多，请阅读<https://treyhunner.com/2018/02/python-3-s-range-better-than-python-2-s-xrange/> 这篇文章。
+在 `Python2.x` 中 `range()` 函数根据起始值，终止值及步进值三个参数在内存中建立了一个列表。当需要一个很大的列表时，初始化这个列表既占内存又费时间。 为了克服它的缺点，`Python2.x` 提供了 `xrange()` 函数。`xrange()` 函数只有在需要值时才临时通过计算提供值，这大大节省了内存。你也许已经发现在 `Python3.x` 中并没有提供 `xrange` 函数。这不是退步，简单起见，你可以认为 `Python3.x` 中的 `range` 就是 `Python2.x` 中的 `xrange`。 其实`Python3.x`中的`range`比`Python2.x`中的`xrange`还要强大的多。如果你想了解更多，请阅读[https://treyhunner.com/2018/02/python-3-s-range-better-than-python-2-s-xrange/](https://treyhunner.com/2018/02/python-3-s-range-better-than-python-2-s-xrange/) 这篇文章。
 
-
-### 1.8. 字典
+## 1.8. 字典
 
 字典就是一个关联数组，也有人称之为哈希表。它是一个通过关键字做为索引的对象的集合。 `Python`使用大括号`{}`语法来创建一个字典，例如：
 
@@ -422,11 +419,11 @@ a = {
 }
 ```
 
-用关键字索引运算符可以访问字典的某个值: 
+用关键字索引运算符可以访问字典的某个值:
 
 ```python
 u = a["username"]
-d = a["home"] 
+d = a["home"]
 ```
 
 用下面的方式插入或者修改对象:
@@ -449,24 +446,24 @@ else:
 ```
 
 上边的操作还可以用更简单的方法完成:
-  
+
 ```python
 username = a.get("username", "unknown user")
 ```
 
-字典的 `keys()` 方法返回由所有 `key` 组成的列表： 
- 
+字典的 `keys()` 方法返回由所有 `key` 组成的列表：
+
 ```python
-k = a.keys() # k = ["username", "home", "uid", "shell"] 
+k = a.keys() # k = ["username", "home", "uid", "shell"]
 ```
- 
-`del` 语句可以删除字典中的特定元素:  
+
+`del` 语句可以删除字典中的特定元素:
 
 ```python
 del a["username"]
 ```
 
-### 1.9. 函数
+## 1.9. 函数
 
 在Python中，使用 `def` 语句来创建函数，如下例:
 
@@ -512,26 +509,25 @@ a = 4.5
 ...
 def foo():
     global a
-    a = 8.8   # 改变全局变量 a 
+    a = 8.8   # 改变全局变量 a
 ```
 
-### 1.10. 类
+## 1.10. 类
 
-`Python` 支持面向对象编程，在面向对象编程中，`class 语句用于定义一个类。 例如，下面这个类定义了一个简单的栈：
-
+`Python` 支持面向对象编程，在面向对象编程中，\`class 语句用于定义一个类。 例如，下面这个类定义了一个简单的栈：
 
 ```python
 class Stack(object):
 
     def __init__(self): # 初始化栈 
         self.stack = []
-    
+
     def push(self,object):
         self.stack.append(object)
-    
+
     def pop(self):
         return self.stack.pop()
-    
+
     def length(self):
         return len(self.stack)
 ```
@@ -539,7 +535,6 @@ class Stack(object):
 在类中，方法用 `def` 语句定义。类中每个方法的第一个参数总是引用类实例对象本身，使用 `self` 这个名字代表这个参数是一种习惯。不过这也仅仅是个习惯而已，如果你愿意使用别的名字，没有问题。不过为了别人容易看懂你的程序，建议还是跟随大家的习惯。类的方法中若需要调用实例对象的属性则必须显式使用`self`变量，如上所示。方法名中若前后均有两个下划线，则表示这是一个特殊方法，比如上面例子中的 `init` 方法，它用来初始化一个对象实例。
 
 象下面这样来使用一个类:
-
 
 ```python
 s = Stack()        # 创建栈实例
@@ -551,7 +546,7 @@ y = s.pop()        # 出栈 y gets 42
 del s              # 删除栈实例
 ```
 
-### 1.11. 异常
+## 1.11. 异常
 
 如果在你的程序在运行过程中发生了一个错误，就会触发异常 `exception`，你会看到类似下面的错误信息：
 
@@ -572,15 +567,15 @@ except IOError, e:
 
 上面的语句表示：如果有 `IOError` 发生，造成错误的详细原因将会被放置在对象 `e` 中，然后运行 `except` 代码块。 若发生其他类型的异常，系统就会将控制权转到处理该异常的 `except` 代码块，如果没有找到该代码块，程序将运行终止。若程序运行过程中没有异常发生，`except` 代码块则被忽略。
 
-`raise` 语句用来有意触发异常，你可以触发内建的异常，如下例: 
+`raise` 语句用来有意触发异常，你可以触发内建的异常，如下例:
 
 ```python
 raise RuntimeError, "Unrecoverable error"
 ```
 
-当然，你也可以创建你自己的异常。这将在[第五章-控制流]()中的[定义新的异常]()一节中详细讲述。
+当然，你也可以创建你自己的异常。这将在[第五章-控制流](di-1-zhang-kuai-su-ru-men.md)中的[定义新的异常](di-1-zhang-kuai-su-ru-men.md)一节中详细讲述。
 
-### 1.12. 模块
+## 1.12. 模块
 
 当你的程序变得越来越大，为便于修改和维护，可能需要把它们分割成多个相关的文件。 `Python` 允许你把函数定义或多个文件所共同需要的那部分代码放入一个文件，然后在其他程序或者脚本中将该文件作为一个模块导入。要创建一个模块，把相应的语句和定义放入一个文件，这个文件的名字就是模块名。
 
@@ -635,3 +630,4 @@ from div import *
 ... 
 >>>
 ```
+

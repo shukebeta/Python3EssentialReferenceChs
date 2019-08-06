@@ -61,7 +61,7 @@ Hello World`
 
 ## 1.2. 变量和表达式
 
-通过 Listing 1.1 所示的程序示例变量和表达式的用法  
+通过 Listing 1.1 所示的程序示例变量和表达式的用法
 
 Listing 1.1 复利计算器
 
@@ -608,7 +608,7 @@ from div import divide
 a, b = divide(2305,29) # 这种情况下不再需要div 前缀
 ```
 
-导入一个模块中的所有内容到当前的名称空间: 
+导入一个模块中的所有内容到当前的名称空间:
 
 ```python
 from div import *
